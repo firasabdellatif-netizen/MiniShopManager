@@ -14,11 +14,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnNext = findViewById<Button>(R.id.btnNext)
+        val btnCatalog = findViewById<Button>(R.id.btnCatalog)
+
+        btnCatalog.setOnClickListener {
+            startActivity(Intent(this, CatalogActivity::class.java))
+        }
 
         btnNext.setOnClickListener {
             Toast.makeText(this, "Bonjour Firas Abdellatif !", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
 
         Log.d("LIFECYCLE", "onCreate appelé")
